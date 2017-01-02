@@ -985,50 +985,50 @@ static int mysql_read(user_data_t *ud) {
     }
      else if (strncmp (key, "Queries", strlen ("Queries")) == 0)
     {
-        counter_submit ("mysql_queries", NULL , val, db);
+        derive_submit ("mysql_queries", NULL , val, db);
     }
      else if (strncmp (key, "Connections", strlen ("Connections")) == 0)
     {
-        counter_submit ("mysql_connections", NULL , val, db);
+        derive_submit ("mysql_connections", NULL , val, db);
     }
      else if (strncmp (key, "Uptime", strlen ("Uptime")) == 0)
     {
-        counter_submit ("mysql_uptime", NULL , val, db);
+        derive_submit ("mysql_uptime", NULL , val, db);
     }
      else if (strncmp (key, "Questions", strlen ("Questions")) == 0)
     {
-        counter_submit ("mysql_questions", NULL , val, db);
+        derive_submit ("mysql_questions", NULL , val, db);
     }
      else if (strncmp (key, "Created_", strlen ("Created_")) == 0)
     {
      if (strcmp (key, "Created_tmp_tables") == 0)
-        counter_submit ("mysql_created", "tmp_tables", val, db);
+        derive_submit ("mysql_created", "tmp_tables", val, db);
      else if (strcmp (key, "Created_tmp_disk_tables") == 0)
-        counter_submit ("mysql_created", "tmp_disk_tables", val, db);
+        derive_submit ("mysql_created", "tmp_disk_tables", val, db);
      else if (strcmp (key, "Created_tmp_files") == 0)
-        counter_submit ("mysql_created", "tmp_files", val, db);
+        derive_submit ("mysql_created", "tmp_files", val, db);
     }
      else if (strncmp (key, "Aborted_", strlen ("Aborted_")) == 0)
     {
      if (strcmp (key, "Aborted_clients") == 0)
-      counter_submit ("mysql_aborted", "clients", val, db);
+      derive_submit ("mysql_aborted", "clients", val, db);
      else if (strcmp (key, "Aborted_connects") == 0)
-        counter_submit ("mysql_aborted", "connects", val, db);
+        derive_submit ("mysql_aborted", "connects", val, db);
     }
      else if (strncmp (key, "Key_", strlen ("Key_")) == 0)
     {
      if(strcmp (key, "Key_reads") == 0)
-        counter_submit ("mysql_key", "reads", val, db);
+        derive_submit ("mysql_key", "reads", val, db);
      else if (strcmp (key, "Key_read_requests") == 0)
-        counter_submit ("mysql_key", "read_requests", val, db);
+        derive_submit ("mysql_key", "read_requests", val, db);
      if(strcmp (key, "Key_writes") == 0)
-        counter_submit ("mysql_key", "writes", val, db);
+        derive_submit ("mysql_key", "writes", val, db);
      else if (strcmp (key, "Key_write_requests") == 0)
-        counter_submit ("mysql_key", "write_requests", val, db);
+        derive_submit ("mysql_key", "write_requests", val, db);
      if(strcmp (key, "Key_blocks_unused") == 0)
-        counter_submit ("mysql_key", "blocks_unused", val, db);
+        derive_submit ("mysql_key", "blocks_unused", val, db);
      else if (strcmp (key, "Key_blocks_not_flushed") == 0)
-           counter_submit ("mysql_key", "not_flushed", val, db);
+           derive_submit ("mysql_key", "not_flushed", val, db);
     }
   }
   mysql_free_result(res);
