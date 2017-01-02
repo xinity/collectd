@@ -623,6 +623,9 @@ static int mysql_read_innodb_stats(mysql_database_t *db, MYSQL *con) {
       {"ibuf_merges_discard_delete_mark", "operations", DS_TYPE_DERIVE},
       {"ibuf_merges_discard_delete", "operations", DS_TYPE_DERIVE},
       {"ibuf_merges_discard_merges", "operations", DS_TYPE_DERIVE},
+      {"ibuf_merges","operation", DS_TYPE_DERIVE},
+      {"ibuf_free_list","operation", DS_TYPE_DERIVE},
+      {"ibuf_segment_size","operation", DS_TYPE_DERIVE},
       {"ibuf_size", "bytes", DS_TYPE_GAUGE},
 
       {"innodb_activity_count", "gauge", DS_TYPE_GAUGE},
