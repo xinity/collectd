@@ -153,7 +153,13 @@ mysql_sort              value:DERIVE:0:U
 mysql_sort_merge_passes value:DERIVE:0:U
 mysql_sort_rows         value:DERIVE:0:U
 mysql_slow_queries      value:DERIVE:0:U
-mysql_uptime            value:GAUGE:0:4294967295
+mysql_uptime            value:GAUGE:0:U
+mysql_queries           value:GAUGE:0:U
+mysql_questions         value:GAUGE:0:U
+mysql_connections       value:GAUGE:0:U
+mysql_created           value:GAUGE:0:U
+mysql_aborted           value:GAUGE:0:U
+mysql_key               value:GAUGE:0:U
 nfs_procedure           value:DERIVE:0:U
 nginx_connections       value:GAUGE:0:U
 nginx_requests          value:DERIVE:0:U
